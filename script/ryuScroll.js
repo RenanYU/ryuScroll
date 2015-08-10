@@ -32,20 +32,29 @@
 				reachedbottom:undefined,//A function that will be called when reached the bottom of the element
 				reachedtop:undefined,	//A function that will be called when reached the top of the element
 				callback:undefined,		//A function that will be called when ajax has finished
+				failure:undefined		//A function that will be called when ajax has failed
 			},
 			config:{
 				debug:false,			//Show in the console information about how the plugin is working 
-				addLog:false			//Show in the console information about how the plugin is working (Added a LOG)
+				addlog:false			//Show in the console information about how the plugin is working (Added a LOG)
 			},
 		}
 
 		$.extend(opts, options);
 
+		if ( options.config != undefined ) {
+
+			if ( options.config.addlog === true ) {
+
+				opts.config.debug = true;		
+			}
+		}
+
 		var privation = {
 
 			debug:function(location, text){
 
-				if(opts.log){
+				if(opts.config.addlog){
 
 					console.log(location, text);
 
@@ -101,6 +110,12 @@
 
 					onAJAX = false;
 
+				}).fail(function ( resp ) ){
+
+					if ( typeof opts.events.failure == "function" ) opts.events.failure( data );
+
+					onAJAX = false;
+
 				});
 				
 
@@ -147,6 +162,14 @@
 		_this.update = (function(options){
 
 			$.extend(opts, options);
+
+			if ( options.config != undefined ) {
+
+				if ( options.config.addlog === true ) {
+
+					opts.config.debug = true;		
+				}
+			}
 
 		});
 
