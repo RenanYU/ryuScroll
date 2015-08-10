@@ -25,88 +25,102 @@ necessitar no botão *próximo* ou *anterior* para ver outros produtos, basta co
 
 >	Dentro do parametro options podemos informar os seguintes itens:
 
->	**gap**	- [Númerico]	[Padrão: 100]
+>	**gap**	- [*Númerico*]	[Padrão: 100]
 
 >	Quando que o plugin deverá trazer novos itens.
 
->	**nextAjax**	[Booleano]	[Padrão: true]
+>	**nextAjax**	[*Booleano*]	[Padrão: true]
 
 >	Determina se o plugin deve ou não adicionar novos itens quando o parametro **gap** for acionado
 
->	**ajax**	[Objeto]	[Obrigatório]
+>	**ajax**	[*Objeto*]	[Obrigatório]
 
 >	Deve ser um objeto cujos parametros seguem o **$.ajax()**
 
->	**events**	[Objeto]
+>	**events**	[*Objeto*]
 
->		**beforeajax**	[Função]	[Opcional]
+>	**beforeajax**	[*Função*]	[Opcional]
 
->		Este parametro deverá ser uma função a que será executada sempre antes do ajax ser executado. O que esta função irá realizar fica apto a você.
+>		  Este parametro deverá ser uma função a que será executada sempre antes do ajax. 
 
->		**afterajax**	[Função]	[Opcional]
+>     O que esta função irá realizar fica apto a você.
 
->		Este parametro deverá ser uma função a que será executada sempre depois do ajax ser executado. O que esta função irá realizar fica apto a você.
+>	**afterajax**	[*Função*]	[Opcional]
 
->		**reachedbottom**	[Função]	[Opcional]
+>		  Este parametro deverá ser uma função que será executada sempre depois do ajax.
 
->		Este parametro deverá ser uma função a que será executada sempre o scroll alcançar o **chão** do elemento. O que esta função irá realizar fica apto a você.
+>     O que esta função irá realizar fica apto a você.
 
->		**reachedtop**	[Função]	[Opcional]
+> **reachedbottom**	[*Função*]	[Opcional]
 
->		Este parametro deverá ser uma função a que será executada sempre o scroll alcançar o **topo** do elemento. O que esta função irá realizar fica apto a você.
+>		  Este parametro deverá ser uma função sendo executada sempre que o scroll alcançar o CHÃO.
 
->		**callback**	[Função]	[Opcional]
+>     O que esta função irá realizar fica apto a você.
 
->		Este parametro deverá ser uma função a que será executada entre o **beforeajax** e o **afterajax**. Esta função será chamada quando o ajax for finalizado com sucesso retornado o resultado vindo do ajax
+>	**reachedtop**	[*Função*]	[Opcional]
 
->		**failure**	[Função]	[Opcional]
+>     Este parametro deverá ser uma função sendo executada sempre que o scroll alcançar o TOPO.
 
->		Este parametro deverá ser uma função a que será executada entre o **beforeajax** e o **afterajax**. Esta função será chamada quando o ajax for finalizado sem sucesso retornado o resultado vindo do ajax
+>     O que esta função irá realizar fica apto a você.
 
->	**config**
+>	**callback**	[*Função*]	[Opcional]
 
->		**debug**	[Booleano]	[Opcional]
+>		  Este parametro deverá ser uma função que será executada entre o BEFOREAJAX e o AFTERAJAX.
 
->		Quando for true, algumas etapas no processo do plugin será apresentado no console do browser. Isso ajudará quando houver necessidade de debugar o plugin quando houve um erro inesperado.
+>     Sendo chamada quando o ajax for finalizado com sucesso retornado o resultado vindo do ajax
 
->		**addlog**	[Booleano]	[Opcional]
+> **failure**	[*Função*]	[Opcional]
 
->		Quando for true, **debug** obrigatoriamente será **true** apenas adiciona um log ao browser.
+>		  Este parametro deverá ser uma função que será executada entre o BEFOREAJAX e o AFTERAJAX.
+
+>     Sendo chamada quando o ajax for finalizado sem sucesso retornado o resultado vindo do ajax
+
+>	**config**	[*Objeto*]
+
+>	**debug**	[*Booleano*]	[Opcional]
+
+>	    Quando for true, algumas etapas no processo do plugin será apresentado no console do browser.
+
+>     Isso ajudará quando houver necessidade de debugar o plugin quando houve um erro inesperado.
+
+>	**addlog**	[*Booleano*]	[Opcional]
+
+>     Quando for true, DEBUG obrigatoriamente será TRUE apenas adiciona um log ao browser.
 
 >	**Exemplo**
 
 >	$('div').ryuScroll({
 
->	ajax:{
+>	  ajax:{
 
->		url:'getData.php',
+>	    url:'getData.php',
 
->		data:{
+>	    data:{
 
->			start:10
+>	      start:10
 
->		}
+>	    }
 
->	},
+>	  },
 
->	events:{
+>	  events:{
 
->		afterajax: function( update, data ) {
+>	    afterajax: function( update, data ) {
 
->			// Faça Algo
+>	      // Faça Algo
 
->		},
+>	    },
 
->		callback: function ( resp ){
+>	    callback: function ( resp ){
 
->			$.each(resp.data, function ( index, data ) {
+>	        $.each(resp.data, function ( index, data ) {
 
->				// Faça Algo
+>	            // Faça Algo
 
->			})
+>	        })
 
->		}
+>	    }
 
->	}
+>	  }
 
 >	});
