@@ -6,6 +6,7 @@ ryuScroll
 
 > This plugin help you to control information that will be displayed in your site. 
 
+> Comming Soon
 ----------
 
 ***Português***
@@ -89,38 +90,38 @@ necessitar no botão *próximo* ou *anterior* para ver outros produtos, basta co
 
 >	**Exemplo**
 
->	$('div').ryuScroll({
+>	  $('div').ryuScroll({
 
->	  ajax:{
+>	    ajax:{
 
->	    url:'getData.php',
+>	      url:'getData.php',
 
->	    data:{
+>	      data:{
 
->	      start:10
+>	        start:10
 
->	    }
-
->	  },
-
->	  events:{
-
->	    afterajax: function( update, data ) {
-
->	      // Faça Algo
+>	      }
 
 >	    },
 
->	    callback: function ( resp ){
+>	    events:{
 
->	        $.each(resp.data, function ( index, data ) {
+>	      afterajax: function( update, data ) {
 
->	            // Faça Algo
+>	        // Faça Algo
 
->	        })
+>	      },
+
+>	      callback: function ( resp ){
+
+>	          $.each(resp.data, function ( index, data ) {
+
+>	              // Faça Algo
+
+>	          })
+
+>	      }
 
 >	    }
 
->	  }
-
->	});
+>	  });
