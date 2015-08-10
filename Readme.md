@@ -14,7 +14,7 @@ ryuScroll
 
 > Utilizando esse plugin a sua página poderá carregar com maior rapidez, pois inicialmente a quantidade de informações será menor e novas informação serão adicionados conforme a necessidade e conforme você programou.
 
-> Podemos utilizar esse plugin para apresentar um menu de lista que on inves de carregar a toda a lista de uma vez, podemos fatiar em partes e conforme a necessidade novos itens serão carregados. Dessa forma a respeita apresentado ao cliente será mais rápida e menos estressante.
+> Podemos utilizar esse plugin para apresentar um menu de lista que on invés de carregar toda a lista de uma vez, podemos fatiar em partes e conforme a necessidade os demais serão carregados. Dessa forma a resposta apresentado ao cliente será mais rápida.
 
 > Esse mecanismo de carregar ao poucos seria semelhantes a paginação. No entanto a diferença neste caso em relação a paginação é que o cliente não
 necessitar no botão *próximo* ou *anterior* para ver outros produtos, basta continuar navegando que novos itens serão apresentados.
@@ -25,52 +25,88 @@ necessitar no botão *próximo* ou *anterior* para ver outros produtos, basta co
 
 >	Dentro do parametro options podemos informar os seguintes itens:
 
->	**gap**	- [Númerico]
+>	**gap**	- [Númerico]	[Padrão: 100]
 
 >	Quando que o plugin deverá trazer novos itens.
 
->	**nextAjax**	[Booleano]
+>	**nextAjax**	[Booleano]	[Padrão: true]
 
 >	Determina se o plugin deve ou não adicionar novos itens quando o parametro **gap** for acionado
 
->	**ajax**	[Objeto]
+>	**ajax**	[Objeto]	[Obrigatório]
 
 >	Deve ser um objeto cujos parametros seguem o **$.ajax()**
 
 >	**events**	[Objeto]
 
->		**beforeajax**	[Função]
+>		**beforeajax**	[Função]	[Opcional]
 
 >		Este parametro deverá ser uma função a que será executada sempre antes do ajax ser executado. O que esta função irá realizar fica apto a você.
 
->		**afterajax**	[Função]
+>		**afterajax**	[Função]	[Opcional]
 
 >		Este parametro deverá ser uma função a que será executada sempre depois do ajax ser executado. O que esta função irá realizar fica apto a você.
 
->		**reachedbottom**	[Função]
+>		**reachedbottom**	[Função]	[Opcional]
 
 >		Este parametro deverá ser uma função a que será executada sempre o scroll alcançar o **chão** do elemento. O que esta função irá realizar fica apto a você.
 
->		**reachedtop**	[Função]
+>		**reachedtop**	[Função]	[Opcional]
 
 >		Este parametro deverá ser uma função a que será executada sempre o scroll alcançar o **topo** do elemento. O que esta função irá realizar fica apto a você.
 
->		**callback**	[Função]
+>		**callback**	[Função]	[Opcional]
 
 >		Este parametro deverá ser uma função a que será executada entre o **beforeajax** e o **afterajax**. Esta função será chamada quando o ajax for finalizado com sucesso retornado o resultado vindo do ajax
 
->		**failure**	[Função]
+>		**failure**	[Função]	[Opcional]
 
 >		Este parametro deverá ser uma função a que será executada entre o **beforeajax** e o **afterajax**. Esta função será chamada quando o ajax for finalizado sem sucesso retornado o resultado vindo do ajax
 
 >	**config**
 
->		**debug**	[Booleano]
+>		**debug**	[Booleano]	[Opcional]
 
 >		Quando for true, algumas etapas no processo do plugin será apresentado no console do browser. Isso ajudará quando houver necessidade de debugar o plugin quando houve um erro inesperado.
 
->		**addlog**	[Booleano]
+>		**addlog**	[Booleano]	[Opcional]
 
 >		Quando for true, **debug** obrigatoriamente será **true** apenas adiciona um log ao browser.
 
->	})
+>	**Exemplo**
+
+>	$('div').ryuScroll({
+
+>	ajax:{
+
+>		url:'getData.php',
+
+>		data:{
+
+>			start:10
+
+>		}
+
+>	},
+
+>	events:{
+
+>		afterajax: function( update, data ) {
+
+>			// Faça Algo
+
+>		},
+
+>		callback: function ( resp ){
+
+>			$.each(resp.data, function ( index, data ) {
+
+>				// Faça Algo
+
+>			})
+
+>		}
+
+>	}
+
+>	});
