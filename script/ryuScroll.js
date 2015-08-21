@@ -110,7 +110,7 @@
 
 					onAJAX = false;
 
-				}).fail(function ( resp ) ){
+				}).fail(function ( resp ){
 
 					if ( typeof opts.events.failure == "function" ) opts.events.failure( data );
 

@@ -42,51 +42,51 @@ necessitar no botão *próximo* ou *anterior* para ver outros produtos, basta co
 
 >	**beforeajax**	[*Função*]	[Opcional]
 
->		  Este parametro deverá ser uma função a que será executada sempre antes do ajax. 
+>		Este parametro deverá ser uma função a que será executada sempre antes do ajax. 
 
->     O que esta função irá realizar fica apto a você.
+>		O que esta função irá realizar fica apto a você.
 
 >	**afterajax**	[*Função*]	[Opcional]
 
->		  Este parametro deverá ser uma função que será executada sempre depois do ajax.
+>		Este parametro deverá ser uma função que será executada sempre depois do ajax.
 
->     O que esta função irá realizar fica apto a você.
+>		O que esta função irá realizar fica apto a você.
 
 > **reachedbottom**	[*Função*]	[Opcional]
 
->		  Este parametro deverá ser uma função sendo executada sempre que o scroll alcançar o CHÃO.
+>		Este parametro deverá ser uma função sendo executada sempre que o scroll alcançar o CHÃO.
 
->     O que esta função irá realizar fica apto a você.
+>		O que esta função irá realizar fica apto a você.
 
 >	**reachedtop**	[*Função*]	[Opcional]
 
->     Este parametro deverá ser uma função sendo executada sempre que o scroll alcançar o TOPO.
+>		Este parametro deverá ser uma função sendo executada sempre que o scroll alcançar o TOPO.
 
->     O que esta função irá realizar fica apto a você.
+>		O que esta função irá realizar fica apto a você.
 
 >	**callback**	[*Função*]	[Opcional]
 
->		  Este parametro deverá ser uma função que será executada entre o BEFOREAJAX e o AFTERAJAX.
+>		Este parametro deverá ser uma função que será executada entre o BEFOREAJAX e o AFTERAJAX.
 
->     Sendo chamada quando o ajax for finalizado com sucesso retornado o resultado vindo do ajax
+>		Sendo chamada quando o ajax for finalizado com sucesso retornado o resultado vindo do ajax
 
 > **failure**	[*Função*]	[Opcional]
 
->		  Este parametro deverá ser uma função que será executada entre o BEFOREAJAX e o AFTERAJAX.
+>		Este parametro deverá ser uma função que será executada entre o BEFOREAJAX e o AFTERAJAX.
 
->     Sendo chamada quando o ajax for finalizado sem sucesso retornado o resultado vindo do ajax
+>		Sendo chamada quando o ajax for finalizado sem sucesso retornado o resultado vindo do ajax
 
 >	**config**	[*Objeto*]
 
 >	**debug**	[*Booleano*]	[Opcional]
 
->	    Quando for true, algumas etapas no processo do plugin será apresentado no console do browser.
+>		Quando for true, algumas etapas no processo do plugin será apresentado no console do browser.
 
->     Isso ajudará quando houver necessidade de debugar o plugin quando houve um erro inesperado.
+>		Isso ajudará quando houver necessidade de debugar o plugin quando houve um erro inesperado.
 
 >	**addlog**	[*Booleano*]	[Opcional]
 
->     Quando for true, DEBUG obrigatoriamente será TRUE apenas adiciona um log ao browser.
+>		Quando for true, DEBUG obrigatoriamente será TRUE apenas adiciona um log ao browser.
 
 >	**Exemplo**
 
